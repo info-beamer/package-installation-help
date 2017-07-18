@@ -2,7 +2,8 @@
     "name": "Device Info Screen",
     "permissions": {
         "unboxed": "Needs access to the device configuration",
-        "network": "Needs network access for online check"
+        "network": "Needs network access for online check",
+        "run-as-root": "Needs access to /sd/config"
     },
     "options": [{
         "title": "Logo",

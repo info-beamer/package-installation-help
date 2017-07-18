@@ -1,0 +1,15 @@
+{
+
+    "rotation": 0,
+    "logo": {
+        "asset_name": "example-logo.png"
+    },
+    "info": "Test text, foo bar bla bla bla bar bla bla bla bar bla bla bla bar bla bla bla",
+    "devices": [
+        {
+            "rotation": 0,
+            "serial": "1234",
+            "big": "Left"
+        }
+    ]
+}

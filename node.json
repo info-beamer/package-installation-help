@@ -1,0 +1,51 @@
+{
+    "name": "Device Info Screen",
+    "permissions": {
+        "unboxed": "Needs access to the device configuration",
+        "network": "Needs network access for online check"
+    },
+    "options": [{
+        "title": "Logo",
+        "ui_width": 6,
+        "name": "logo",
+        "type": "resource",
+        "valid": ["image"],
+        "default": "empty.png"
+    }, {
+        "title": "Info Text",
+        "ui_width": 12,
+        "name": "info",
+        "type": "string",
+        "default": ""
+    }, {
+        "title": "Devices",
+        "name": "devices",
+        "type": "list",
+        "itemname": "Device",
+        "items": [{
+            "title": "Device",
+            "ui_width": 4,
+            "name": "serial",
+            "type": "device"
+        }, {
+            "title": "Display rotation",
+            "ui_width": 4,
+            "name": "rotation",
+            "type": "select",
+            "hint": "Rotate content clockwise?",
+            "options": [
+                [0, "None"],
+                [90, "90°"],
+                [180, "180°"],
+                [270, "270°"]
+            ],
+            "default": 0
+        }, {
+            "title": "Big Text",
+            "ui_width": 4,
+            "name": "big",
+            "type": "string",
+            "default": ""
+        }]
+	}]
+}

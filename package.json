@@ -2,5 +2,6 @@
     "name": "Screen Installation Instructions",
     "author": "Florian Wesch <fw@info-beamer.com>",
     "desc": "Show useful information on a screen for your installation crew",
-    "repository": "https://github.com/info-beamer/package-installation-help"
+    "repository": "https://github.com/info-beamer/package-installation-help",
+    "platforms": ["pi/v6", "pi/v7", "pi/v8"]
 }

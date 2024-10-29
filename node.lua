@@ -1,5 +1,5 @@
 node.alias "install"
-util.noglobals()
+util.no_globals()
 
 local SERIAL = sys.get_env "SERIAL"
 local font = resource.load_font "Ubuntu-C.ttf"
@@ -123,6 +123,9 @@ local function draw_info()
         end
         val(v.online, col)
     end
+
+    key "Timestamp"
+    val(math.floor(os.time()))
 
     if info ~= "" then
         val ""

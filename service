@@ -10,7 +10,7 @@ def send(key, val):
     sock.sendto('install/update/%s:%s' % (key, val), ('127.0.0.1', 4444))
 
 def readfile(filename):
-    with file(filename, "rb") as f:
+    with open(filename, "rb") as f:
         return f.read()
 
 def get_default_gateway():
@@ -36,10 +36,9 @@ def get_ipv4(ifname):
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         info = fcntl.ioctl(s.fileno(), 0x8915, struct.pack('256s', ifname[:15]))
         ip = socket.inet_ntoa(info[20:24])
-
-	mask = struct.unpack('>I', fcntl.ioctl(s.fileno(), 0x891b, struct.pack('256s',ifname))[20:24])[0]
-	mask = bin(mask)[2:].count('1') # Remember: not everything has to be performance optimal :-)
-	return "%s/%d" % (ip, mask)
+        mask = struct.unpack('>I', fcntl.ioctl(s.fileno(), 0x891b, struct.pack('256s',ifname))[20:24])[0]
+        mask = bin(mask)[2:].count('1') # Remember: not everything has to be performance optimal :-)
+        return "%s/%d" % (ip, mask)
     except IOError:
         return "<no ipv4>"
     except:
@@ -93,7 +92,7 @@ if __name__ == "__main__":
     while 1:
         try:
             if not run_next_test():
-		time.sleep(0.2)
+                time.sleep(0.2)
         except KeyboardInterrupt:
             raise
         except:
